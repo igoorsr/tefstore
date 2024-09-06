@@ -27,7 +27,7 @@ async function main() {
     res.send({
       success: true,
       statusCode: 200,
-      body: "Welcome to TEF Store",
+      body: "Bem vindo ao TEF Style",
     });
   });
 
