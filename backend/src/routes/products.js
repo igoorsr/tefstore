@@ -1,31 +1,45 @@
 import express from "express";
-import UsersControllers from "../controllers/users.js";
+import ProductsControllers from "../controllers/products.js";
 
-const usersRouter = express.Router();
+const productsRouter = express.Router();
+const productsControllers = new ProductsControllers();
 
-const usersControllers = new UsersControllers();
+productsRouter.get("/", async (req, res) => {
+  const { body, success, statusCode } = await productsControllers.getProducts();
 
-usersRouter.get("/", async (req, res) => {
-  const { success, statusCode, body } = await usersControllers.getUsers();
-
-  res.status(statusCode).send({ success, statusCode, body });
+  res.status(statusCode).send({ body, success, statusCode });
 });
 
-usersRouter.delete("/:id", async (req, res) => {
-  const { success, statusCode, body } = await usersControllers.deleteUser(
+productsRouter.post("/", async (req, res) => {
+  const { body, success, statusCode } = await productsControllers.addProduct(
+    req.body
+  );
+
+  res.status(statusCode).send({ body, success, statusCode });
+});
+
+productsRouter.delete("/:id", async (req, res) => {
+  const { body, success, statusCode } = await productsControllers.deleteProduct(
     req.params.id
   );
 
-  res.status(statusCode).send({ success, statusCode, body });
+  res.status(statusCode).send({ body, success, statusCode });
 });
 
-usersRouter.put("/:id", async (req, res) => {
-  const { success, statusCode, body } = await usersControllers.updateUser(
+productsRouter.put("/:id", async (req, res) => {
+  const { body, success, statusCode } = await productsControllers.updateProduct(
     req.params.id,
     req.body
   );
 
-  res.status(statusCode).send({ success, statusCode, body });
+  res.status(statusCode).send({ body, success, statusCode });
 });
 
-export default usersRouter;
+productsRouter.get("/availables", async (req, res) => {
+  const { body, success, statusCode } =
+    await productsControllers.getAvailableProducts();
+
+  res.status(statusCode).send({ body, success, statusCode });
+});
+
+export default productsRouter;

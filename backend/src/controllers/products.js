@@ -26,6 +26,16 @@ export default class ProductsControllers {
     }
   }
 
+  async addProduct(productData) {
+    try {
+      const result = await this.dataAcess.addProduct(productData);
+
+      return ok(result);
+    } catch (error) {
+      return serverError(error);
+    }
+  }
+
   async deleteProduct(productId) {
     try {
       const result = await this.dataAcess.deleteProduct(productId);

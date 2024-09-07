@@ -35,5 +35,14 @@ export default class ProductsDataAcess {
     return result;
   }
 
-  async updateProduct(productId, productData) {}
+  async updateProduct(productId, productData) {
+    const result = await Mongo.db
+      .collection(collectionName)
+      .findOneAndUpdate(
+        { _id: new ObjectId(productId) },
+        { $set: productData }
+      );
+
+    return result;
+  }
 }
