@@ -4,7 +4,7 @@ import crypto from "crypto";
 
 const collectionName = "users";
 
-export default class UsersDataAcess {
+export default class UsersDataAccess {
   async getUsers() {
     const result = await Mongo.db.collection(collectionName).find({}).toArray();
 
@@ -22,15 +22,16 @@ export default class UsersDataAcess {
   async updateUser(userId, userData) {
     if (userData.password) {
       const salt = crypto.randomBytes(16);
+
       crypto.pbkdf2(
         userData.password,
         salt,
         310000,
         16,
         "sha256",
-        async (err, hashedPassword) => {
-          if (err) {
-            throw new Error("Error during hashin password");
+        async (error, hashedPassword) => {
+          if (error) {
+            throw new Error("Error during hashing password");
           }
           userData = { ...userData, password: hashedPassword, salt };
 

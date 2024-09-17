@@ -1,14 +1,14 @@
-import UsersDataAcess from "../dataAcess/users.js";
 import { ok, serverError } from "../helpers/httpResponse.js";
+import UsersDataAccess from "../dataAcess/users.js";
 
 export default class UsersControllers {
   constructor() {
-    this.dataAcess = new UsersDataAcess();
+    this.dataAccess = new UsersDataAccess();
   }
 
   async getUsers() {
     try {
-      const users = await this.dataAcess.getUsers();
+      const users = await this.dataAccess.getUsers();
 
       return ok(users);
     } catch (error) {
@@ -18,7 +18,7 @@ export default class UsersControllers {
 
   async deleteUser(userId) {
     try {
-      const result = await this.dataAcess.deleteUser(userId);
+      const result = await this.dataAccess.deleteUser(userId);
 
       return ok(result);
     } catch (error) {
@@ -28,7 +28,7 @@ export default class UsersControllers {
 
   async updateUser(userId, userData) {
     try {
-      const result = await this.dataAcess.updateUser(userId, userData);
+      const result = await this.dataAccess.updateUser(userId, userData);
 
       return ok(result);
     } catch (error) {

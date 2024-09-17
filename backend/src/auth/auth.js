@@ -2,11 +2,13 @@ import express from "express";
 import passport from "passport";
 import LocalStrategy from "passport-local";
 import crypto from "crypto";
-import { Mongo } from "../database/mongo.js";
 import jwt from "jsonwebtoken";
-import { AutoEncryptionLoggerLevel, Collection, ObjectId } from "mongodb";
+import { Mongo } from "../database/mongo.js";
+import { ObjectId } from "mongodb";
 
 const collectionName = "users";
+
+const authRouter = express.Router();
 
 passport.use(
   new LocalStrategy(
@@ -28,14 +30,14 @@ passport.use(
         310000,
         16,
         "sha256",
-        (err, hashedPassword) => {
-          if (err) {
-            return callback(null, false);
+        (error, hashedPassword) => {
+          if (error) {
+            return callback(error);
           }
 
-          const userPasswordBuffer = Buffer.from(user.password.buffer);
+          const userPassowrdBuffer = Buffer.from(user.password.buffer);
 
-          if (!crypto.timingSafeEqual(userPasswordBuffer, hashedPassword)) {
+          if (!crypto.timingSafeEqual(userPassowrdBuffer, hashedPassword)) {
             return callback(null, false);
           }
 
@@ -48,8 +50,6 @@ passport.use(
   )
 );
 
-const authRouter = express.Router();
-
 authRouter.post("/signup", async (req, res) => {
   const checkUser = await Mongo.db
     .collection(collectionName)
@@ -60,31 +60,32 @@ authRouter.post("/signup", async (req, res) => {
       success: false,
       statusCode: 500,
       body: {
-        text: "User already exists!",
+        text: "User already exists",
       },
     });
   }
 
   const salt = crypto.randomBytes(16);
+
   crypto.pbkdf2(
     req.body.password,
     salt,
     310000,
     16,
     "sha256",
-    async (err, hashedPassword) => {
-      if (err) {
-        return res.status(500).send({
+    async (error, hashedPassword) => {
+      if (error) {
+        res.status(500).send({
           success: false,
           statusCode: 500,
           body: {
-            text: "User already exists!",
-            err: err,
+            text: "User already exists",
           },
         });
       }
 
       const result = await Mongo.db.collection(collectionName).insertOne({
+        fullname: req.body.fullname,
         email: req.body.email,
         password: hashedPassword,
         salt,
@@ -93,18 +94,20 @@ authRouter.post("/signup", async (req, res) => {
       if (result.insertedId) {
         const user = await Mongo.db
           .collection(collectionName)
-          .findOne({ _id: new ObjectId(result.insertedId) });
+          .findOne(
+            { _id: new ObjectId(result.insertedId) },
+            { projection: { password: 0, salt: 0 } }
+          );
 
-        const token = jwt.sign(user, "secretary");
+        const token = jwt.sign(user, "secret");
 
         return res.send({
           success: true,
           statusCode: 200,
           body: {
-            text: "User registered correctly!",
-            token,
+            text: "User registered",
             user,
-            logged: true,
+            token,
           },
         });
       }
@@ -135,7 +138,7 @@ authRouter.post("/login", (req, res) => {
       });
     }
 
-    const token = jwt.sign(user, "secretary");
+    const token = jwt.sign(user, "secret");
     return res.status(200).send({
       success: true,
       statusCode: 200,
