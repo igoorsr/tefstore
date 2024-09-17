@@ -1,0 +1,88 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  padding: 0.2em;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.orderContainer {
+  background-color: #101a1d;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.2em;
+}
+
+.ordersContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5em;
+}
+
+.emailName {
+  margin-top: -10px;
+  font-weight: 200;
+  word-wrap: break-word;
+}
+
+.titleName {
+  text-transform: uppercase;
+  font-size: 32px;
+  word-wrap: break-word;
+}
+
+.info1 {
+  font-size: 22px;
+  color: white;
+  font-weight: 200;
+}
+
+.productName {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.logoutButton {
+  width: fit-content;
+  padding: 1em;
+  background-color: #101a1d;
+  border: none;
+  color: white;
+  border-radius: 0.2em;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 660px) {
+  .ordersContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    gap: 0.1em;
+    max-width: 100%;
+  }
+
+  .orderContainer {
+    background-color: #101a1d;
+    color: white;
+    padding: 0.5em;
+    border-radius: 0.2em;
+    margin: 5px;
+  }
+
+  .emailName,
+  .titleName,
+  .logoutButton {
+    margin: 5px;
+  }
+
+  .titleName {
+    margin-bottom: -20px;
+    font-size: 24px;
+  }
+
+  .emailName {
+    font-size: 20px;
+  }
+}
