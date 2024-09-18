@@ -3,16 +3,16 @@
   flex-direction: column;
   gap: 0.5em;
   padding: 0.2em;
-  justify-content: center;
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
 .orderContainer {
   background-color: #101a1d;
   color: white;
-  padding: 0.5em;
+  padding: 0.7em;
   border-radius: 0.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
 }
 
 .ordersContainer {
@@ -20,31 +20,56 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5em;
 }
+.titleName {
+  text-transform: uppercase;
+  font-size: 32px;
+  word-wrap: break-word;
+  margin-top: 20px;
+  color: #101a1d;
+}
 
 .emailName {
   margin-top: -10px;
   font-weight: 200;
   word-wrap: break-word;
+  color: #101a1d;
 }
 
-.titleName {
-  text-transform: uppercase;
-  font-size: 32px;
-  word-wrap: break-word;
+.pickupStatus {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  font-size: 16px;
+  color: #101a1d;
+  font-weight: 500;
+  border-radius: 0.2em;
+  width: fit-content;
+  padding: 0.3em;
+  margin-bottom: 5px;
 }
 
-.info1 {
-  font-size: 22px;
-  color: white;
-  font-weight: 200;
+.pending {
+  background-color: rgb(248, 186, 72);
+}
+
+.canceled {
+  background-color: rgb(255, 85, 85);
+}
+
+.completed {
+  background-color: rgb(146, 251, 97);
 }
 
 .productName {
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .logoutButton {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
   padding: 1em;
   background-color: #101a1d;
@@ -55,10 +80,14 @@
   text-transform: uppercase;
 }
 
+.messageNoOrder {
+  text-align: center;
+}
+
 @media screen and (max-width: 660px) {
   .ordersContainer {
     display: grid;
-    grid-template-columns: repeat(1, 2fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 0.1em;
     max-width: 100%;
   }
@@ -66,7 +95,7 @@
   .orderContainer {
     background-color: #101a1d;
     color: white;
-    padding: 0.5em;
+    padding: 0.6em;
     border-radius: 0.2em;
     margin: 5px;
   }
@@ -78,11 +107,21 @@
   }
 
   .titleName {
-    margin-bottom: -20px;
+    margin-bottom: -15px;
+    margin-top: 20px;
     font-size: 24px;
   }
 
   .emailName {
     font-size: 20px;
+  }
+
+  .info1 {
+    font-size: 18px;
+  }
+
+  .productName {
+    font-size: 22px;
+    font-weight: 400;
   }
 }

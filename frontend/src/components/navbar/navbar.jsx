@@ -17,7 +17,7 @@ export default function NavBar() {
         <Link to={"/"}>
           <img
             className={styles.logo}
-            src="/logoassinatura.png"
+            src="/logos/logoassinatura.png"
             alt="Logo TEF Store"
           />
         </Link>
@@ -40,7 +40,7 @@ export default function NavBar() {
       <div className={styles.mobileNavbarItems}>
         <img
           className={styles.logo}
-          src="/logoassinatura.png"
+          src="/logos/logoassinatura.png"
           alt="Logo TEF Store"
         />
         <div className={styles.mobileNavbarBtns}>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import authServices from "../../services/auth";
 import orderServices from "../../services/order";
+import { LuLogOut, LuTimer, LuAlertCircle, LuCheckCheck } from "react-icons/lu";
 
 export default function Profile() {
   const { logout } = authServices();
@@ -38,14 +39,32 @@ export default function Profile() {
       </div>
       <button className={styles.logoutButton} onClick={handleLogout}>
         Logout
+        <LuLogOut />
       </button>
 
       {ordersList?.length > 0 ? (
         <div className={styles.ordersContainer}>
           {ordersList.map((order) => (
             <div key={order._id} className={styles.orderContainer}>
+              {order.pickupStatus === "Pending" ? (
+                <p className={`${styles.pickupStatus} ${styles.pending}`}>
+                  <LuTimer />
+                  {order.pickupStatus}
+                </p>
+              ) : null}
+              {order.pickupStatus === "Completed" ? (
+                <p className={`${styles.pickupStatus} ${styles.completed}`}>
+                  <LuCheckCheck />
+                  {order.pickupStatus}
+                </p>
+              ) : null}
+              {order.pickupStatus === "Canceled" ? (
+                <p className={`${styles.pickupStatus} ${styles.canceled}`}>
+                  <LuAlertCircle />
+                  {order.pickupStatus}
+                </p>
+              ) : null}
               <p className={styles.info1}>{order.pickupTime}</p>
-              <p className={styles.info1}>{order.pickupStatus}</p>
               {order.orderItems.map((item) => (
                 <div key={item._id}>
                   <h4 className={styles.productName}>
@@ -58,7 +77,7 @@ export default function Profile() {
           ))}
         </div>
       ) : (
-        <div>You do not have orders yet</div>
+        <div className={styles.messageNoOrder}>You do not have orders yet</div>
       )}
     </div>
   );

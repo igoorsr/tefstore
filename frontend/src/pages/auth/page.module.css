@@ -10,6 +10,7 @@ form {
 .title {
   text-transform: uppercase;
   margin-top: 30px;
+  margin-bottom: -15px;
 }
 
 .handleTypeButton {
@@ -19,7 +20,16 @@ form {
 }
 
 .confirmButton {
-  background-color: transparent;
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 1em;
+  background-color: #101a1d;
   border: none;
-  color: rgb(3, 89, 170);
+  color: white;
+  border-radius: 0.2em;
+  cursor: pointer;
+  text-transform: uppercase;
 }
