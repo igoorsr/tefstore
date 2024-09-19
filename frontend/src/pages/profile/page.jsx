@@ -46,14 +46,14 @@ export default function Profile() {
         <div className={styles.ordersContainer}>
           {ordersList.map((order) => (
             <div key={order._id} className={styles.orderContainer}>
-              {order.pickupStatus === "Pending" ? (
-                <p className={`${styles.pickupStatus} ${styles.pending}`}>
+              {order.pickupStatus === "On its way" ? (
+                <p className={`${styles.pickupStatus} ${styles.onway}`}>
                   <LuTimer />
                   {order.pickupStatus}
                 </p>
               ) : null}
-              {order.pickupStatus === "Completed" ? (
-                <p className={`${styles.pickupStatus} ${styles.completed}`}>
+              {order.pickupStatus === "Delivered" ? (
+                <p className={`${styles.pickupStatus} ${styles.delivered}`}>
                   <LuCheckCheck />
                   {order.pickupStatus}
                 </p>

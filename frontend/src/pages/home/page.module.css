@@ -1,0 +1,120 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em;
+}
+
+.productSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  background-color: #101a1d;
+  color: white;
+  padding: 2em;
+  border-radius: 0.5em;
+  margin-top: -10px;
+}
+
+.image {
+  width: 80%;
+  height: auto;
+  display: flex;
+  margin: 0 auto;
+  margin-top: -60px;
+}
+
+.description,
+.imageDescription {
+  text-align: justify;
+}
+
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: -30px;
+}
+
+.socialButtonsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.1em;
+}
+
+.socialButton {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 1em;
+  background-color: #101a1d;
+  border: none;
+  color: white;
+  border-radius: 0.2em;
+  cursor: pointer;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .productSection {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: -25px;
+    padding: 1em;
+  }
+
+  .title,
+  .imageTitle {
+    font-size: 24px;
+  }
+
+  .description,
+  .imageDescription {
+    font-size: 18px;
+  }
+
+  .image {
+    width: 60%;
+    margin-top: -30px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .pageContainer {
+    padding: 0.5em;
+  }
+
+  .productSection {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: -25px;
+  }
+
+  .image {
+    width: 40%;
+    margin-top: -20px;
+  }
+
+  .title {
+    font-size: 26px;
+    text-align: left;
+  }
+
+  .description,
+  .imageDescription {
+    font-size: 16px;
+  }
+
+  .imageTitle {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .socialButtonsContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
