@@ -1,0 +1,25 @@
+.footerContainer,
+.linksContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #101a1d;
+  height: 10vh;
+}
+
+.footerContainer img {
+  width: 3em;
+  padding: 0.5em;
+}
+
+.credit {
+  color: white;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkSocial {
+  text-decoration: none;
+  color: white;
+}

@@ -38,11 +38,13 @@ export default function NavBar() {
       </div>
 
       <div className={styles.mobileNavbarItems}>
-        <img
-          className={styles.logo}
-          src="images/logos/logoassinatura.png"
-          alt="Logo TEF Store"
-        />
+        <Link to={"/"}>
+          <img
+            className={styles.logo}
+            src="images/logos/logoassinatura.png"
+            alt="Logo TEF Store"
+          />
+        </Link>
         <div className={styles.mobileNavbarBtns}>
           <LuShoppingCart className={styles.navbarLink} />
           <LuMenu className={styles.navbarLink} onClick={handleOpenMenu} />
@@ -50,13 +52,21 @@ export default function NavBar() {
       </div>
       <Drawer anchor="right" open={openMenu} onClose={handleOpenMenu}>
         <div className={styles.drawer}>
-          <Link to={"/"} className={styles.navbarLink} href="">
+          <Link to={"/"} className={styles.navbarLink} onClick={handleOpenMenu}>
             Home
           </Link>
-          <Link to={"/products"} className={styles.navbarLink} href="">
+          <Link
+            to={"/products"}
+            className={styles.navbarLink}
+            onClick={handleOpenMenu}
+          >
             Products
           </Link>
-          <Link to={"/profile"} className={styles.navbarLink} href="">
+          <Link
+            to={"/profile"}
+            className={styles.navbarLink}
+            onClick={handleOpenMenu}
+          >
             Profile
           </Link>
         </div>

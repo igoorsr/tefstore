@@ -5,6 +5,7 @@
         "available": true,
         "description": "Boné branco unissex TEF Style, ideal para complementar seu visual com um toque moderno e sofisticado. Feito com material leve e confortável, possui ajuste na parte traseira para um caimento perfeito.",
         "materials": ["Algodão", "Ajuste com fecho regulável"],
+        "imgUrl":"/images/products/bone2.png",
         "category": "Bone"
     }
     ,
@@ -14,6 +15,7 @@
         "available": false,
         "description": "Boné preto unissex TEF, perfeito para quem busca um estilo discreto e elegante. Feito com material resistente e confortável, com ajuste regulável para garantir um ajuste personalizado.",
         "materials": ["Algodão", "Ajuste com fecho regulável"],
+        "imgUrl":"/images/products/bone1.png",
         "category": "Bone"
     }
     ,
@@ -23,6 +25,7 @@
         "available": true,
         "description": "Camiseta branca unissex TEF Style, ideal para um look casual e elegante. Confeccionada em algodão macio e respirável, com estampa moderna e ajuste confortável.",
         "materials": ["Algodão", "Estampa em silk screen"],
+        "imgUrl":"/images/products/camiseta2.png",
         "category": "Roupas"
     }
     ,
@@ -32,6 +35,7 @@
         "available": false,
         "description": "Camiseta preta unissex TEF Style, um clássico do estilo moderno. Feita de algodão de alta qualidade, com uma estampa discreta e sofisticada, perfeita para qualquer ocasião.",
         "materials": ["Algodão", "Estampa em silk screen"],
+        "imgUrl":"/images/products/camiseta1.png",
         "category": "Roupas"
     }
     ,
@@ -41,6 +45,7 @@
         "available": true,
         "description": "Agasalho branco unissex TEF, ideal para manter o conforto e o estilo em dias frios. Confeccionado em material macio e quente, com design moderno e ajuste perfeito. Possui zíper frontal e bolsos laterais.",
         "materials": ["Poliéster", "Forro em fleece", "Zíper frontal"],
+        "imgUrl":"/images/products/agasalho2.png",
         "category": "Agasalho"
     }
     ,
@@ -50,6 +55,7 @@
         "available": false,
         "description": "Agasalho preto unissex TEF, perfeito para um visual elegante e aquecido. Feito com material resistente e confortável, com forro em fleece para maior aconchego. Inclui zíper frontal e bolsos laterais.",
         "materials": ["Poliéster", "Forro em fleece", "Zíper frontal"],
+        "imgUrl":"/images/products/agasalho1.png",
         "category": "Agasalho"
     }
     ,
@@ -59,6 +65,7 @@
         "available": true,
         "description": "Tênis preto unissex TEF, ideal para quem busca conforto e estilo no dia a dia. Confeccionado com material resistente e respirável, possui solado em borracha antiderrapante e design moderno que combina com qualquer look. Perfeito para atividades casuais e esportivas.",
         "materials": ["Couro sintético", "Solado em borracha antiderrapante", "Palmilha acolchoada"],
+        "imgUrl":"/images/products/tenis1.png",
         "category": "Calcados"
     },
     {
@@ -67,6 +74,7 @@
         "available": false,
         "description": "Colar unissex de ouro TEF, uma peça sofisticada e luxuosa que exala elegância. Com um pingente em ouro sólido com a inscrição 'TEF', este colar é ideal para quem busca um acessório exclusivo e de alta qualidade. A corrente ajustável proporciona um ajuste perfeito e confortável.",
         "materials": ["Ouro 18k", "Pingente com inscrição TEF", "Corrente ajustável"],
+        "imgUrl":"/images/products/acessorio1.png",
         "category": "Acessórios"
     }
     

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import authServices from "../../services/auth";
 import orderServices from "../../services/order";
 import { LuLogOut, LuTimer, LuAlertCircle, LuCheckCheck } from "react-icons/lu";
+import { Link } from "react-router-dom";
+import Loading from "../loading/page";
 
 export default function Profile() {
   const { logout } = authServices();
@@ -21,7 +23,7 @@ export default function Profile() {
   }, [authData, refetchOrders]);
 
   if (orderLoading) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
 
   const handleLogout = () => {
@@ -77,7 +79,13 @@ export default function Profile() {
           ))}
         </div>
       ) : (
-        <div className={styles.messageNoOrder}>You do not have orders yet</div>
+        <div className={styles.messageNoOrder}>
+          You do not have orders yet
+          <br />
+          <Link className={styles.link} to={"/products"}>
+            Click here and see our products!
+          </Link>
+        </div>
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
-import homepage1 from "../../../public/images/homepage/homepage1.png";
-import homepage2 from "../../../public/images/homepage/homepage2.png";
-import homepage3 from "../../../public/images/homepage/homepage3.png";
+import homepage1 from "/images/homepage/homepage1.png";
+import homepage2 from "/images/homepage/homepage2.png";
+import homepage3 from "/images/homepage/homepage3.png";
 import {
   FaMapMarkerAlt,
   FaFacebookSquare,
@@ -58,8 +58,8 @@ export default function Home() {
       </section>
 
       <section className={styles.contactSection}>
-        <h1>Contact Us</h1>
-        <p>
+        <h1 className={styles.contactTitle}>Contact Us</h1>
+        <p className={styles.contactDescription}>
           Have any questions or need assistance? Our team is here to help. Send
           us a message, and we'll get back to you as soon as possible.
         </p>
