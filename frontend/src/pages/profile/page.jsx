@@ -31,8 +31,6 @@ export default function Profile() {
     return navigate("/");
   };
 
-  console.log(ordersList);
-
   return (
     <div className={styles.pageContainer}>
       <div>

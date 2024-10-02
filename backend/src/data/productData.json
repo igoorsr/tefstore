@@ -12,7 +12,7 @@
     {
         "name": "Boné Preto TEF",
         "price": 59.99,
-        "available": false,
+        "available": true,
         "description": "Boné preto unissex TEF, perfeito para quem busca um estilo discreto e elegante. Feito com material resistente e confortável, com ajuste regulável para garantir um ajuste personalizado.",
         "materials": ["Algodão", "Ajuste com fecho regulável"],
         "imgUrl":"/images/products/bone1.png",
@@ -32,7 +32,7 @@
     {
         "name": "Camiseta Preta TEF Style",
         "price": 89.99,
-        "available": false,
+        "available": true,
         "description": "Camiseta preta unissex TEF Style, um clássico do estilo moderno. Feita de algodão de alta qualidade, com uma estampa discreta e sofisticada, perfeita para qualquer ocasião.",
         "materials": ["Algodão", "Estampa em silk screen"],
         "imgUrl":"/images/products/camiseta1.png",
@@ -52,7 +52,7 @@
     {
         "name": "Agasalho Preto TEF",
         "price": 129.99,
-        "available": false,
+        "available": true,
         "description": "Agasalho preto unissex TEF, perfeito para um visual elegante e aquecido. Feito com material resistente e confortável, com forro em fleece para maior aconchego. Inclui zíper frontal e bolsos laterais.",
         "materials": ["Poliéster", "Forro em fleece", "Zíper frontal"],
         "imgUrl":"/images/products/agasalho1.png",
@@ -67,11 +67,12 @@
         "materials": ["Couro sintético", "Solado em borracha antiderrapante", "Palmilha acolchoada"],
         "imgUrl":"/images/products/tenis1.png",
         "category": "Calcados"
-    },
+    }
+    ,
     {
         "name": "Colar de Ouro TEF",
         "price": 299.99,
-        "available": false,
+        "available": true,
         "description": "Colar unissex de ouro TEF, uma peça sofisticada e luxuosa que exala elegância. Com um pingente em ouro sólido com a inscrição 'TEF', este colar é ideal para quem busca um acessório exclusivo e de alta qualidade. A corrente ajustável proporciona um ajuste perfeito e confortável.",
         "materials": ["Ouro 18k", "Pingente com inscrição TEF", "Corrente ajustável"],
         "imgUrl":"/images/products/acessorio1.png",
