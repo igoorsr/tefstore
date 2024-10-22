@@ -3,14 +3,15 @@ import { useCartContext } from "../../contexts/useCartContext";
 import styles from "./page.module.css";
 import { LuMinusCircle } from "react-icons/lu";
 import ConfirmOrderPopup from "../../components/confirmOrderPopup/confirmOrderPopup";
-import productServices from "../../services/products";
+import { Link } from "react-router-dom";
+import orderServices from "../../services/order";
 
 export default function Cart() {
   const { cartItems, updateCartItems, removeFromCart, clearCart } =
     useCartContext();
 
   const [confirmPopupOpen, setConfirmPopupOpen] = useState(false);
-  const { sendOrder } = productServices();
+  const { sendOrder } = orderServices();
 
   const handleChangeItemQty = (mode, itemId) => {
     const updatedCartItem = cartItems.map((item) => {
@@ -33,11 +34,11 @@ export default function Cart() {
     setConfirmPopupOpen(!confirmPopupOpen);
   };
 
-  const handleConfirmOrder = (productData) => {
-    productData.items = cartItems.map((item) => {
+  const handleConfirmOrder = (orderData) => {
+    orderData.items = cartItems.map((item) => {
       return { productId: item._id, quantity: item.quantity };
     });
-    sendOrder(productData);
+    sendOrder(orderData);
     setConfirmPopupOpen(!confirmPopupOpen);
     clearCart();
   };
@@ -45,8 +46,10 @@ export default function Cart() {
   if (!cartItems.length) {
     return (
       <div>
-        <h1>Your cart is empty... :/</h1>
-        <button>See our specialities!</button>
+        <h1 className={styles.titleEmpty}>Your cart is empty... :/</h1>
+        <Link className={styles.seeMore} to={"/products"}>
+          Click here and see our products!
+        </Link>
       </div>
     );
   }

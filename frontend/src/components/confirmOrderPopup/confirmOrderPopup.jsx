@@ -18,13 +18,12 @@ export default function ConfirmOrderPopup({ open, onClose, onConfirm }) {
       if (!formData?.pickupTime) {
         return;
       } else {
-        const productData = {
+        const orderData = {
           userId: authData?.user?._id,
           pickupTime: formData?.pickupTime,
         };
-
-        // console.log(productData)
-        onConfirm(productData);
+        //console.log(orderData);
+        onConfirm(orderData);
       }
     }
   };
@@ -41,14 +40,15 @@ export default function ConfirmOrderPopup({ open, onClose, onConfirm }) {
       <div className={styles.popupContainer}>
         <h2>We're almost there...</h2>
         <p>
-          Confirm your product with the current date:{" "}
-          <strong>{new Date().toLocaleDateString()}</strong>. What time will you
-          come to pick up your product?
+          Confirm your order with the current date:{" "}
+          <strong>{new Date().toLocaleDateString()}</strong>. What time do you
+          prefer your order to arrive at home?
         </p>
         <form className={styles.formContainer}>
           <TextField
-            onChange={handleFormDataChange}
             required
+            className={styles.formTime}
+            onChange={handleFormDataChange}
             type="time"
             name="pickupTime"
           />
