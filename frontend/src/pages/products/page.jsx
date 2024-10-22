@@ -4,6 +4,7 @@ import Loading from "../loading/page";
 import ProductCard from "../../components/productCard/productCard";
 import styles from "./page.module.css";
 import ProductPopup from "../../components/productPopup/productPopup";
+import { useCartContext } from "../../contexts/useCartContext";
 
 export default function Products() {
   const {
@@ -13,6 +14,7 @@ export default function Products() {
     refetchProducts,
   } = productsServices();
   const [productSelected, setProductSelected] = useState(null);
+  const { addToCart } = useCartContext();
 
   useEffect(() => {
     if (refetchProducts) {
@@ -26,6 +28,11 @@ export default function Products() {
 
   const handleClosePopup = () => {
     setProductSelected(null);
+  };
+
+  const handleAddToCart = (itemToAdd) => {
+    addToCart(itemToAdd);
+    handleClosePopup();
   };
 
   if (productsLoading) {
@@ -52,6 +59,7 @@ export default function Products() {
         <ProductPopup
           productData={productSelected}
           onClose={handleClosePopup}
+          onAddToCart={handleAddToCart}
         />
       )}
     </>

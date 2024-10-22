@@ -11,7 +11,13 @@ export default function ProductPopup({ productData, onClose, onAddToCart }) {
           <p className={styles.materials}>[{String(productData.materials)}]</p>
           <p>{productData.description}</p>
           <h2>$ {productData.price}</h2>
-          <button onClick={() => {}}>Add to cart</button>
+          <button
+            onClick={() => {
+              onAddToCart(productData);
+            }}
+          >
+            Add to cart
+          </button>
         </div>
       </div>
     </Dialog>

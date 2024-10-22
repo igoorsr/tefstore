@@ -1,0 +1,100 @@
+.pageContainer button {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 1em;
+  background-color: #101a1d;
+  border: none;
+  color: white;
+  border-radius: 0.2em;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.emptyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.titleEmpty {
+  text-align: left;
+  font-size: 28px;
+  font-weight: 400;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.buttonEmpty {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 1em;
+  background-color: #101a1d;
+  border: none;
+  color: white;
+  border-radius: 0.2em;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.itemContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1em;
+}
+
+.itemContainer img {
+  width: 200px;
+  height: 100%;
+  border-radius: 1em;
+  object-fit: cover;
+}
+
+.itemsListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+  text-align: justify;
+}
+
+.materialText {
+  color: #8d8d8d;
+}
+
+.portionContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.portionBtns {
+  display: flex;
+  gap: 0.2em;
+}
+
+.confirmBtn {
+  position: fixed;
+  font-size: medium;
+  bottom: 2em;
+}

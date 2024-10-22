@@ -79,6 +79,7 @@
   border-radius: 0.2em;
   cursor: pointer;
   text-transform: uppercase;
+  margin-left: 0px;
 }
 
 .messageNoOrder {
