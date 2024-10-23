@@ -64,12 +64,16 @@ export default function Cart() {
               <div className={styles.itemContainer} key={item._id}>
                 <img src={item.imgUrl} alt="" />
                 <div className={styles.itemContent}>
-                  <h2>{item.name}</h2>
-                  <p>[{String(item.materials)}]</p>
-                  <p>{item.description}</p>
+                  <h2 className={styles.itemName}>{item.name}</h2>
+                  <p className={styles.itemMaterials}>
+                    [{String(item.materials)}]
+                  </p>
+                  <p className={styles.itemDescription}>{item.description}</p>
                   <div className={styles.portionContainer}>
-                    <p>Quantity:</p>
-                    <p>{item.quantity}</p>
+                    <div className={styles.quantity}>
+                      <p>Quantity:</p>
+                      <p>{item.quantity}</p>
+                    </div>
                     <div className={styles.portionBtns}>
                       <button
                         onClick={() => {

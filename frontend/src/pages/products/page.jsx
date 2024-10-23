@@ -41,7 +41,7 @@ export default function Products() {
 
   return (
     <>
-      <div>
+      <div className={styles.mainContainer}>
         {productsList.map((product) => (
           <div
             key={product._id}

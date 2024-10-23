@@ -11,7 +11,7 @@
   border-radius: 0.2em;
   cursor: pointer;
   text-transform: uppercase;
-  margin-left: 20px;
+  margin-left: 0.2em;
 }
 
 .emptyContainer {
@@ -39,11 +39,12 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 1em;
+  max-width: 1000px;
 }
 
 .itemContainer img {
   width: 200px;
-  height: 100%;
+  height: 240px;
   border-radius: 1em;
   object-fit: cover;
 }
@@ -58,7 +59,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2em;
+  gap: 1em;
 }
 
 .itemContent {
@@ -88,4 +89,122 @@
   position: fixed;
   font-size: medium;
   bottom: 2em;
+}
+
+.removeButton {
+  display: flex;
+  margin-left: -10px;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.itemName {
+  font-size: 26px;
+}
+
+.itemMaterials {
+  font-size: 18px;
+}
+
+.itemDescription {
+  font-size: 18px;
+}
+
+@media (max-width: 1000px) {
+  .pageContainer {
+    padding: 1em;
+  }
+
+  .itemContainer {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 600px;
+  }
+
+  .itemContainer img {
+    width: 600px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+
+  .itemContent {
+    padding: 0 10px;
+  }
+
+  .itemName {
+    font-size: 24px;
+  }
+
+  .itemMaterials,
+  .itemDescription {
+    font-size: 16px;
+  }
+
+  .confirmBtn {
+    font-size: small;
+    bottom: 1em;
+  }
+
+  .titleEmpty {
+    font-size: 24px;
+  }
+
+  .seeMore {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageContainer {
+    padding: 0.5em;
+  }
+
+  .itemContainer {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0.5em;
+    max-width: 300px;
+  }
+
+  .itemContainer img {
+    width: 300px;
+    height: 180px;
+  }
+
+  .itemContent {
+    padding: 0 5px;
+    text-align: left;
+  }
+
+  .itemName {
+    font-size: 20px;
+  }
+
+  .itemMaterials,
+  .itemDescription {
+    font-size: 14px;
+  }
+
+  .quantity {
+    font-size: 16px;
+  }
+
+  .confirmBtn {
+    font-size: small;
+    bottom: 0.5em;
+  }
+
+  .titleEmpty {
+    font-size: 20px;
+  }
+
+  .seeMore {
+    font-size: 14px;
+  }
 }

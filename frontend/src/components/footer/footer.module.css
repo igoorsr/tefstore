@@ -24,3 +24,9 @@
   text-decoration: none;
   color: white;
 }
+
+@media screen and (max-width: 660px) {
+  .footerContainer {
+    margin-top: 50px;
+  }
+}
