@@ -7,7 +7,7 @@ export default function ProductCard({ productData }) {
         <img src={productData.imgUrl} alt="" />
         <div className={styles.cardContent}>
           <h4>{productData.name}</h4>
-          <h3 className={styles.price}>$ {productData.price}</h3>
+          <h3 className={styles.price}>R$ {productData.price}</h3>
         </div>
       </div>
     </>

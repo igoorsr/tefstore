@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import authServices from "../../services/auth";
 import { LuLogIn } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
+import Loading from "../loading/page";
 
 export default function Auth() {
   const [formType, setFormType] = useState("login");
@@ -53,19 +54,19 @@ export default function Auth() {
   };
 
   if (authLoading) {
-    return <h1>Loading</h1>;
+    return <Loading />;
   }
 
   return (
     <div className={styles.authPageContainer}>
       {formType === "login" ? (
         <>
-          <h1 className={styles.title}>Login</h1>
+          <h1 className={styles.title}>Logar</h1>
           <button
             className={styles.handleTypeButton}
             onClick={handleChangeFormType}
           >
-            Don't you have an account? Click here
+            Ainda não se cadastrou? Clique aqui
           </button>
           <form onSubmit={handleSubmitForm}>
             <TextField
@@ -77,13 +78,13 @@ export default function Auth() {
             />
             <TextField
               required
-              label="Password"
+              label="Senha"
               type="password"
               name="password"
               onChange={handleFormDataChange}
             />
             <button className={styles.confirmButton} type="submit">
-              Login
+              Logar
               <LuLogIn />
             </button>
           </form>
@@ -92,17 +93,17 @@ export default function Auth() {
 
       {formType === "signup" ? (
         <>
-          <h1 className={styles.title}>Signup</h1>
+          <h1 className={styles.title}>Cadastrar</h1>
           <button
             className={styles.handleTypeButton}
             onClick={handleChangeFormType}
           >
-            Already have an account? Click here
+            Já tem uma conta? Clique aqui
           </button>
           <form onSubmit={handleSubmitForm}>
             <TextField
               required
-              label="Fullname"
+              label="Nome completo"
               type="fullname"
               name="fullname"
               onChange={handleFormDataChange}
@@ -116,20 +117,20 @@ export default function Auth() {
             />
             <TextField
               required
-              label="Password"
+              label="Senha"
               type="password"
               name="password"
               onChange={handleFormDataChange}
             />
             <TextField
               required
-              label="Confirm password"
+              label="Confirme a senha"
               type="password"
               name="confirmPassword"
               onChange={handleFormDataChange}
             />
             <button className={styles.confirmButton} type="submit">
-              Signup
+              Cadastrar
               <LuLogIn />
             </button>
           </form>

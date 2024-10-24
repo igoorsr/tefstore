@@ -10,13 +10,13 @@ export default function ProductPopup({ productData, onClose, onAddToCart }) {
           <h2>{productData.name}</h2>
           <p className={styles.materials}>[{String(productData.materials)}]</p>
           <p>{productData.description}</p>
-          <h2>$ {productData.price}</h2>
+          <h2>R$ {productData.price}</h2>
           <button
             onClick={() => {
               onAddToCart(productData);
             }}
           >
-            Add to cart
+            Adicionar ao carrinho
           </button>
         </div>
       </div>

@@ -38,7 +38,7 @@ export default function Profile() {
         <h3 className={styles.emailName}>{authData?.user?.email}</h3>
       </div>
       <button className={styles.logoutButton} onClick={handleLogout}>
-        Logout
+        Deslogar
         <LuLogOut />
       </button>
 
@@ -46,19 +46,19 @@ export default function Profile() {
         <div className={styles.ordersContainer}>
           {ordersList.map((order) => (
             <div key={order._id} className={styles.orderContainer}>
-              {order.pickupStatus === "On its way" ? (
+              {order.pickupStatus === "A caminho" ? (
                 <p className={`${styles.pickupStatus} ${styles.onway}`}>
                   <LuTimer />
                   {order.pickupStatus}
                 </p>
               ) : null}
-              {order.pickupStatus === "Delivered" ? (
+              {order.pickupStatus === "Entregue" ? (
                 <p className={`${styles.pickupStatus} ${styles.delivered}`}>
                   <LuCheckCheck />
                   {order.pickupStatus}
                 </p>
               ) : null}
-              {order.pickupStatus === "Canceled" ? (
+              {order.pickupStatus === "Cancelado" ? (
                 <p className={`${styles.pickupStatus} ${styles.canceled}`}>
                   <LuAlertCircle />
                   {order.pickupStatus}
@@ -70,7 +70,7 @@ export default function Profile() {
                   <h4 className={styles.productName}>
                     {item.itemDetails[0].name}
                   </h4>
-                  <p className={styles.info1}>Quantity: {item.quantity}</p>
+                  <p className={styles.info1}>Quantidade: {item.quantity}</p>
                 </div>
               ))}
             </div>
@@ -78,10 +78,10 @@ export default function Profile() {
         </div>
       ) : (
         <div className={styles.messageNoOrder}>
-          You do not have orders yet
+          Você ainda não tem pedidos
           <br />
           <Link className={styles.link} to={"/products"}>
-            Click here and see our products!
+            Clique aqui e veja nossos produtos!
           </Link>
         </div>
       )}

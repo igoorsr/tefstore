@@ -13,13 +13,13 @@ export default function Home() {
   return (
     <div className={styles.pageContainer}>
       <section>
-        <h1 className={styles.title}>Welcome to TEF Style</h1>
+        <h1 className={styles.title}>Bem vindo ao TEF Style</h1>
         <p className={styles.description}>
-          Where fashion meets simplicity. We offer a carefully curated selection
-          of unisex apparel designed for comfort and style. Whether you're
-          looking for timeless pieces or the latest trends, TEF Style has
-          something for everyone. Elevate your wardrobe with our collection
-          today!
+          Onde a moda encontra a simplicidade. Oferecemos uma seleção
+          cuidadosamente selecionada de roupas unissex, projetadas para conforto
+          e estilo. Se você está em busca de peças atemporais ou das últimas
+          tendências, a TEF Style tem algo para todos. Eleve seu guarda-roupa
+          com nossa coleção hoje!
         </p>
       </section>
 
@@ -28,10 +28,10 @@ export default function Home() {
           <i>
             <img className={styles.image} src={homepage1} />
           </i>
-          <h4 className={styles.imageTitle}>Elevate Your Casual Style</h4>
+          <h4 className={styles.imageTitle}>Eleve Seu Estilo Casual</h4>
           <p className={styles.imageDescription}>
-            Add a touch of laid-back elegance with this must-have piece in your
-            wardrobe.
+            Adicione um toque de elegância descontraída com essa peça
+            indispensável no seu guarda-roupa.
           </p>
         </div>
 
@@ -39,9 +39,11 @@ export default function Home() {
           <i>
             <img className={styles.image} src={homepage2} />
           </i>
-          <h4 className={styles.imageTitle}>Style and Comfort in One</h4>
+          <h4 className={styles.imageTitle}>
+            Estilo e Conforto em Uma Só Peça
+          </h4>
           <p className={styles.imageDescription}>
-            Designed for those who seek comfort without compromising on style.
+            Projetado para quem busca conforto sem abrir mão do estilo.
           </p>
         </div>
 
@@ -49,19 +51,19 @@ export default function Home() {
           <i>
             <img className={styles.image} src={homepage3} />
           </i>
-          <h4 className={styles.imageTitle}>Dazzling Sparkle</h4>
+          <h4 className={styles.imageTitle}>Brilho Deslumbrante</h4>
           <p className={styles.imageDescription}>
-            Jewelry that enhances your beauty and adds a touch of sophistication
-            to your look.
+            Joias que realçam sua beleza e adicionam um toque de sofisticação ao
+            seu visual.
           </p>
         </div>
       </section>
 
       <section className={styles.contactSection}>
-        <h1 className={styles.contactTitle}>Contact Us</h1>
+        <h1 className={styles.contactTitle}>Fale Conosco</h1>
         <p className={styles.contactDescription}>
-          Have any questions or need assistance? Our team is here to help. Send
-          us a message, and we'll get back to you as soon as possible.
+          Tem alguma pergunta ou precisa de ajuda? Nossa equipe está aqui para
+          ajudar. Envie-nos uma mensagem e retornaremos o mais breve possível.
         </p>
         <div className={styles.socialButtonsContainer}>
           <button className={styles.socialButton}>

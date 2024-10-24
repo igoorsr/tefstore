@@ -23,10 +23,10 @@ export default function NavBar() {
         </Link>
         <div className={styles.navbarLinksContainer}>
           <Link to={"/"} className={styles.navbarLink}>
-            Home
+            Início
           </Link>
           <Link to={"/products"} className={styles.navbarLink}>
-            Products
+            Produtos
           </Link>
           <Link to={"/cart"}>
             <LuShoppingCart className={styles.navbarLink} />
@@ -53,21 +53,21 @@ export default function NavBar() {
       <Drawer anchor="right" open={openMenu} onClose={handleOpenMenu}>
         <div className={styles.drawer}>
           <Link to={"/"} className={styles.navbarLink} onClick={handleOpenMenu}>
-            Home
+            Início
           </Link>
           <Link
             to={"/products"}
             className={styles.navbarLink}
             onClick={handleOpenMenu}
           >
-            Products
+            Produtos
           </Link>
           <Link
             to={"/profile"}
             className={styles.navbarLink}
             onClick={handleOpenMenu}
           >
-            Profile
+            Perfil
           </Link>
         </div>
       </Drawer>

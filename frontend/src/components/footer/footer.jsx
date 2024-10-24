@@ -10,7 +10,7 @@ export default function Footer() {
           href="https://www.linkedin.com/in/igordsrosa/"
           target="_blank"
         >
-          Developed by Igor dos Santos Rosa
+          Desenvolvido por Igor dos Santos Rosa
         </a>
       </div>
     </footer>

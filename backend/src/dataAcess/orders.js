@@ -117,7 +117,7 @@ export default class OrdersDataAcess {
     const { items, ...orderDataRest } = orderData;
 
     orderDataRest.createdAt = new Date();
-    orderDataRest.pickupStatus = "On its way";
+    orderDataRest.pickupStatus = "A caminho";
     orderDataRest.userId = new ObjectId(orderDataRest.userId);
 
     const newOrder = await Mongo.db
