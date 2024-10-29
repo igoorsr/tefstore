@@ -6,6 +6,7 @@ export default function orderServices() {
   const [ordersList, setOrdersList] = useState([]);
 
   const url = "http://localhost:3000/orders";
+  // const url = "https://backendtef.azurewebsites.net/orders";
 
   const getUserOrders = (userId) => {
     setOrderLoading(true);

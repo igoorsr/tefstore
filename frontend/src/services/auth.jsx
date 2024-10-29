@@ -4,6 +4,7 @@ export default function authServices() {
   const [authLoading, setAuthLoading] = useState(false);
 
   const url = "http://localhost:3000/auth";
+  // const url = "https://backendtef.azurewebsites.net/auth";
 
   const login = (formData) => {
     setAuthLoading(true);

@@ -19,11 +19,9 @@
 }
 
 .image {
-  width: 80%;
   height: auto;
   display: flex;
   margin: 0 auto;
-  margin-top: -60px;
 }
 
 .title,
@@ -52,6 +50,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.1em;
+  margin-left: 15px;
 }
 
 .socialButton {

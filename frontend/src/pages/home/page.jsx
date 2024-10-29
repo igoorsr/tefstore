@@ -1,7 +1,9 @@
 import styles from "./page.module.css";
-import homepage1 from "/images/homepage/homepage1.png";
-import homepage2 from "/images/homepage/homepage2.png";
-import homepage3 from "/images/homepage/homepage3.png";
+
+import HomePage1 from "../../../public/images/homepage/HomePage1.jsx";
+import HomePage2 from "../../../public/images/homepage/HomePage2.jsx";
+import HomePage3 from "../../../public/images/homepage/HomePage3.jsx";
+
 import {
   FaMapMarkerAlt,
   FaFacebookSquare,
@@ -26,7 +28,7 @@ export default function Home() {
       <section className={styles.productSection}>
         <div>
           <i>
-            <img className={styles.image} src={homepage1} />
+            <HomePage1 className={styles.image} />
           </i>
           <h4 className={styles.imageTitle}>Eleve Seu Estilo Casual</h4>
           <p className={styles.imageDescription}>
@@ -37,7 +39,7 @@ export default function Home() {
 
         <div>
           <i>
-            <img className={styles.image} src={homepage2} />
+            <HomePage2 className={styles.image} />
           </i>
           <h4 className={styles.imageTitle}>
             Estilo e Conforto em Uma Só Peça
@@ -49,7 +51,7 @@ export default function Home() {
 
         <div>
           <i>
-            <img className={styles.image} src={homepage3} />
+            <HomePage3 className={styles.image} />
           </i>
           <h4 className={styles.imageTitle}>Brilho Deslumbrante</h4>
           <p className={styles.imageDescription}>
