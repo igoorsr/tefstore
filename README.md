@@ -127,4 +127,4 @@ frontend/
 ```
 
 ### Licença
-Este projeto é para fins educacionais e está disponível publicamente.
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE).
