@@ -6,7 +6,6 @@ export default function productsServices() {
   const [productsList, setProductsList] = useState([]);
 
   const url = "http://localhost:3000/products";
-  // const url = "https://backendtef.azurewebsites.net/products";
 
   const getAvailableProducts = (userId) => {
     setProductsLoading(true);
